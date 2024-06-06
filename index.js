@@ -1,4 +1,3 @@
-//sides = [side, side, side, side]
 class Polygon {
   constructor(sides) {
     this.sides = sides
@@ -29,17 +28,9 @@ class Square extends Polygon {
   }
 
   get isValid() {
-    //check to see that all sides are equal
-    //sideA = SideB
-    //sideA = SideC
-    //sideA = SideD
     const [sideA, sideB, sideC, sideD] = this.sides
     return sideA === sideB &&
            sideA === sideC &&
            sideA === sideD
   }
-
 }
-
-
-
