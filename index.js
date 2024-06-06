@@ -17,23 +17,29 @@ class Triangle extends Polygon {
   get isValid() {
    const [sideA, sideB, sideC] = this.sides
 
-    return sideA+sideB > sideC && sideA+sideC > sideB && sideB+sideC > sideA
+    return sideA + sideB > sideC &&
+           sideA + sideC > sideB &&
+           sideB + sideC > sideA
+  }
+}
+
+class Square extends Polygon {
+  get area() {
+    return this.sides[0] ** 2
+  }
+
+  get isValid() {
+    //check to see that all sides are equal
+    //sideA = SideB
+    //sideA = SideC
+    //sideA = SideD
+    const [sideA, sideB, sideC, sideD] = this.sides
+    return sideA === sideB &&
+           sideA === sideC &&
+           sideA === sideD
   }
 
 }
-/// need to get the side
-/// a+b > c
-/// a+c > b
-/// b+c > a
-
-let triangle = new Triangle ( [ 5, 5, 5 ] )
-let triangle2 = new Triangle( [ 15, 10, 1 ] )
 
 
-
-console.log(triangle.countSides)
-console.log(triangle.perimeter)
-
-console.log(triangle2.countSides)
-console.log(triangle.perimeter)
 
